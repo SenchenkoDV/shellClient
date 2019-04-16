@@ -21,12 +21,12 @@ public class ClientController {
 
     @SshdShellCommand(value = "city", description = "Show temperature in city")
     public String cityTemperature(String arg) throws IOException {
-        String temperature = "No data for this city.";
+        String defaultMessage = "No data for this city.";
         try {
-            temperature = weatherService.getTemperature(arg);
+            defaultMessage = weatherService.getTemperature(arg);
         } catch (JSONException e) {
             LOGGER.log(Level.ERROR, "Сity output error");
         }
-        return temperature;
+        return defaultMessage;
     }
 }
