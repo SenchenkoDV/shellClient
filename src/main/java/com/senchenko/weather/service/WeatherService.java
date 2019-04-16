@@ -18,7 +18,7 @@ public class WeatherService {
     private static final String RESULT = "City: %s, temperature = %s \n";
 
     @Value("${integration.url}")
-    private static String integrationUrl = "http://integration:8081/integration/temperature";
+    private String integrationUrl = "http://integration:8081/integration/temperature";
 
     public String getTemperature(String cityName) throws JSONException {
         RestTemplate restTemplate = new RestTemplate();
